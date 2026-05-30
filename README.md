@@ -1,6 +1,6 @@
 # Kummetha Sai Charan
 
-**Product Manager – AI & Automation | Ex-SDE | IIT Kharagpur**
+**Product Manager | Applied AI | IIT Kharagpur**
 
 📍 Bengaluru, India
 ✉️ Sai Charan Kummetha
