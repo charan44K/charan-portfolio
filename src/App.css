@@ -115,25 +115,82 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .hero-content { flex: 1 1 auto; min-width: 0; }
 
 .hero-photo {
+  position: relative;
   flex: 0 0 auto;
-  width: clamp(140px, 18vw, 220px);
-  height: clamp(140px, 18vw, 220px);
-  border-radius: 50%;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  box-shadow: 0 0 0 8px var(--accent-dim), 0 20px 60px -20px rgba(49, 225, 122, 0.35);
+  width: clamp(190px, 20vw, 260px);
+  padding: 10px;
 }
 
-.hero-photo img {
+.hero-photo::before,
+.hero-photo::after {
+  content: '';
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border: 2px solid var(--accent);
+}
+.hero-photo::before { top: 0; right: 0; border-left: none; border-bottom: none; }
+.hero-photo::after { bottom: 0; left: 0; border-right: none; border-top: none; }
+
+.hero-photo-frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  clip-path: polygon(22px 0, 100% 0, 100% calc(100% - 22px), calc(100% - 22px) 100%, 0 100%, 0 22px);
+  box-shadow: 0 25px 70px -25px rgba(49, 225, 122, 0.4);
+}
+
+.hero-photo-frame img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  filter: contrast(1.05) saturate(0.95);
+}
+
+.scan-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  box-shadow: 0 0 10px var(--accent);
+  opacity: 0.85;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .scan-line { animation: scan 3.6s ease-in-out infinite; }
+}
+@keyframes scan {
+  0%, 100% { top: 0; }
+  50% { top: calc(100% - 2px); }
+}
+
+.hero-photo-tag {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: -14px;
+  transform: translateX(-50%);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  white-space: nowrap;
 }
 
 @media (max-width: 780px) {
-  .hero-grid { flex-direction: column-reverse; align-items: flex-start; gap: 32px; }
-  .hero-photo { width: 96px; height: 96px; }
+  .hero-grid { flex-direction: column-reverse; align-items: flex-start; gap: 48px; }
+  .hero-photo { width: 170px; margin-left: 4px; }
+  .hero-photo-tag { font-size: 9px; padding: 5px 11px; letter-spacing: 0.05em; }
 }
 
 .hero-tag {

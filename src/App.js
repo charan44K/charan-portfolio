@@ -76,7 +76,11 @@ function App() {
           </div>
 
           <div className="hero-photo">
-            <img src={process.env.PUBLIC_URL + '/images/headshot.png'} alt="Kummetha Sai Charan" />
+            <div className="hero-photo-frame">
+              <img src={process.env.PUBLIC_URL + '/images/headshot.png'} alt="Kummetha Sai Charan" />
+              <div className="scan-line"></div>
+            </div>
+            <div className="hero-photo-tag">ID · SCK-01 // VERIFIED</div>
           </div>
         </div>
       </header>
