@@ -28,24 +28,24 @@ function App() {
 
       <nav className="nav">
         <div className="nav-inner">
-          <div className="nav-id"><span className="dot"></span>SCK // SESSION ACTIVE</div>
+          <div className="nav-id"><span className="dot"></span>Sai Charan Kummetha</div>
           <div className="nav-links">
-            <a href="#summary">00 SUMMARY</a>
-            <a href="#experience">01 EXPERIENCE</a>
-            <a href="#skills">02 SKILLS</a>
-            <a href="#achievements">03 ACHIEVEMENTS</a>
-            <a href="#transmissions">04 TRANSMISSIONS</a>
-            <a href="#education">05 EDUCATION</a>
-            <a href="#contact">06 CONTACT</a>
+            <a href="#summary">Summary</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="#achievements">Achievements</a>
+            <a href="#transmissions">Writing</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
           </div>
         </div>
       </nav>
 
       <header className="hero">
         <div className="wrap">
-          <div className="hero-tag">{'// PRODUCT MANAGER · APPLIED AI'}</div>
+          <div className="hero-tag">Product Manager II · AI Native Experiences</div>
           <h1>Kummetha Sai Charan</h1>
-          <div className="hero-role">Building <span>AI-native experiences</span> — voice agents, agentic UX, and the systems behind them.</div>
+          <div className="hero-role">Building <span>voice agents and AI agents</span> that operate at scale — turning emerging AI capability into trustworthy, everyday product experience.</div>
 
           <div className="status-grid">
             <div className="status-item">
@@ -54,7 +54,7 @@ function App() {
             </div>
             <div className="status-item">
               <div className="status-label">FOCUS</div>
-              <div className="status-value">CONSUMER + MERCHANT AI</div>
+              <div className="status-value">VOICE + AI AGENTS, AT SCALE</div>
             </div>
             <div className="status-item">
               <div className="status-label">LOCATION</div>
@@ -67,7 +67,7 @@ function App() {
           </div>
 
           <div className="hero-links">
-            <a className="link-chip" href="https://www.linkedin.com/in/sai-charan-k/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+            <a className="link-chip primary" href="https://www.linkedin.com/in/sai-charan-k/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
             <a className="link-chip" href="https://saicharankummetha.medium.com" target="_blank" rel="noopener noreferrer">Blog ↗</a>
             <a className="link-chip" href="https://github.com/charan44k" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
             <a className="link-chip" href="mailto:saicharankummetha@gmail.com">Email ↗</a>
@@ -102,7 +102,7 @@ function App() {
             <div className="entry active">
               <span className="tag ai">AI · PRODUCT</span>
               <div className="entry-top">
-                <span className="entry-role">Product Manager II</span>
+                <span className="entry-role">Product Manager II, AI Native Experiences</span>
                 <span className="entry-org">Paytm</span>
                 <span className="entry-dates">FEB 2026 — PRESENT</span>
               </div>
@@ -120,6 +120,7 @@ function App() {
                 <span className="entry-org">Vegrow</span>
                 <span className="entry-dates">JUL 2024 — FEB 2026</span>
               </div>
+              <p className="entry-story">Working at a hypergrowth startup meant learning and executing at an exceptional pace — gaining first-hand exposure to strategy, GTM, and data-driven decision-making. More than anything, I learned to navigate ambiguity: using data, customer insight, and cross-functional collaboration to build products that solved real business problems.</p>
               <ul>
                 <li>Built and scaled Vegrow's AI Voice Platform from prototype to 30,000+ conversations/month across NPS, profiling, slot booking, and ops workflows.</li>
                 <li>Improved task completion from 40% to 70% through conversation redesign, latency optimization, and interruption handling.</li>
@@ -136,6 +137,7 @@ function App() {
                 <span className="entry-org">Vegrow</span>
                 <span className="entry-dates">OCT 2022 — JUN 2024</span>
               </div>
+              <p className="entry-story">Progressing from SDE-I to leading an 8-member team in under two years, during Vegrow's 5× revenue growth, taught me as much about team dynamics and execution as it did about distributed systems. It was my first time leading engineers — and the same period I was invited to Google's Foobar Challenge.</p>
               <ul>
                 <li>Progressed from SDE-I to leading an 8-member team during Vegrow's scale from ₹100 Cr to ₹500 Cr+ revenue.</li>
                 <li>Architected QR-based inventory traceability infrastructure in Golang, Kafka, and MongoDB.</li>
@@ -151,6 +153,7 @@ function App() {
                 <span className="entry-org">LivSYT</span>
                 <span className="entry-dates">MAY 2021 — OCT 2022</span>
               </div>
+              <p className="entry-story">This role laid the foundation for my engineering career. I spent all my time learning backend systems and scalable architecture simply because I loved it — and watching code I wrote in India power products used by customers across the world remains one of the most rewarding parts of the journey.</p>
               <ul>
                 <li>Built backend systems for a B2B construction-tech SaaS platform scaling from 0 to $0.5M ARR.</li>
                 <li>Designed state-machine-based workflow orchestration and event-driven notification systems.</li>
@@ -165,6 +168,7 @@ function App() {
                 <span className="entry-org">Arth Design Build</span>
                 <span className="entry-dates">JAN 2020 — JUN 2020</span>
               </div>
+              <p className="entry-story">Working on BIM automation and generative design with genetic algorithms — before the rise of LLMs — was my first real exposure to AI-driven problem-solving. It's what led me to consciously pivot into software engineering, convinced that understanding how real systems are built is foundational to creating technology that matters.</p>
               <ul>
                 <li>Built generative design workflows using NSGA-II optimization for parking layouts and tower orientation studies.</li>
                 <li>Automated BIM processes with Revit Dynamo, Python, and Revit APIs.</li>
