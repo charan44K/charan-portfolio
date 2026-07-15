@@ -1,224 +1,313 @@
+import React, { useEffect } from 'react';
 import './App.css';
-import { useState } from 'react';
 
 function App() {
-  const [activeSection, setActiveSection] = useState('about');
+  useEffect(() => {
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            navLinks.forEach((link) => {
+              link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+            });
+          }
+        });
+      },
+      { rootMargin: '-40% 0px -50% 0px', threshold: 0 }
+    );
+
+    document.querySelectorAll('section.module[id], footer[id]').forEach((sec) => observer.observe(sec));
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <div className="profile-container">
-          <h1>Kummetha Sai Charan</h1>
-          <h2>Product Manager – AI & Automation | Ex-SDE | IIT Kharagpur</h2>
+    <>
+      <div className="grid-bg"></div>
 
-          <div className="contact-info">
-            <p>📍 Bengaluru, India</p>
-            <p>✉️ <a href="mailto:charan.arch@gmail.com">charan.arch@gmail.com</a></p>
-            <p>🔗 <a href="https://linkedin.com/in/sai-charan-k" target="_blank" rel="noopener noreferrer">LinkedIn</a> | <a href="https://saicharankummetha.medium.com" target="_blank" rel="noopener noreferrer">Blog</a> | <a href="https://github.com/charanvegrow" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+      <nav className="nav">
+        <div className="nav-inner">
+          <div className="nav-id"><span className="dot"></span>SCK // SESSION ACTIVE</div>
+          <div className="nav-links">
+            <a href="#summary">00 SUMMARY</a>
+            <a href="#experience">01 EXPERIENCE</a>
+            <a href="#skills">02 SKILLS</a>
+            <a href="#achievements">03 ACHIEVEMENTS</a>
+            <a href="#transmissions">04 TRANSMISSIONS</a>
+            <a href="#education">05 EDUCATION</a>
+            <a href="#contact">06 CONTACT</a>
           </div>
         </div>
+      </nav>
 
-        <nav className="resume-nav">
-          <button
-            className={activeSection === 'about' ? 'active' : ''}
-            onClick={() => setActiveSection('about')}
-          >
-            About
-          </button>
-          <button
-            className={activeSection === 'experience' ? 'active' : ''}
-            onClick={() => setActiveSection('experience')}
-          >
-            Experience
-          </button>
-          <button
-            className={activeSection === 'skills' ? 'active' : ''}
-            onClick={() => setActiveSection('skills')}
-          >
-            Skills
-          </button>
-          <button
-            className={activeSection === 'education' ? 'active' : ''}
-            onClick={() => setActiveSection('education')}
-          >
-            Education
-          </button>
-          <button
-            className={activeSection === 'achievements' ? 'active' : ''}
-            onClick={() => setActiveSection('achievements')}
-          >
-            Achievements
-          </button>
-        </nav>
+      <header className="hero">
+        <div className="wrap">
+          <div className="hero-tag">// PRODUCT MANAGER · APPLIED AI</div>
+          <h1>Kummetha Sai Charan</h1>
+          <div className="hero-role">Building <span>AI-native experiences</span> — voice agents, agentic UX, and the systems behind them.</div>
 
-        <div className="resume-content">
-          {activeSection === 'about' && (
-            <section className="about-section">
-              <h3>Professional Summary</h3>
-              <p>
-                AI-native Product Manager with 4 years of experience, including 1 year in Product and 3 years in Engineering.
-                Skilled in building scalable products across Conversational AI, Automation, Project Management & Supply Chain Technology.
-                Former SDE turned PM, driving product strategy, rapid prototyping, and cross-functional execution.
-                Passionate about building intelligent systems that not only reduce manual operations but also redefine conventional
-                interfaces and applications—making them adaptive, efficient, and insight-driven.
-              </p>
-              <div className="interests">
-                <h3>Interests</h3>
-                <p>AI for operations, AI-Native SaaS platforms, Voice automation, PM+Tech hybrid leadership, Emerging market innovation</p>
-              </div>
-            </section>
-          )}
+          <div className="status-grid">
+            <div className="status-item">
+              <div className="status-label">ROLE</div>
+              <div className="status-value">PM II — PAYTM</div>
+            </div>
+            <div className="status-item">
+              <div className="status-label">FOCUS</div>
+              <div className="status-value">CONSUMER + MERCHANT AI</div>
+            </div>
+            <div className="status-item">
+              <div className="status-label">LOCATION</div>
+              <div className="status-value">BENGALURU, IN</div>
+            </div>
+            <div className="status-item">
+              <div className="status-label">STATUS</div>
+              <div className="status-value live">● ACTIVE</div>
+            </div>
+          </div>
 
-          {activeSection === 'experience' && (
-            <section className="experience-section">
-              <h3>Product Management Experience</h3>
-
-              <div className="job">
-                <div className="job-header">
-                  <h4>Product Manager | Vegrow (AI & Ops Automation)</h4>
-                  <p className="job-period">July 2024 – Present | Bengaluru, India</p>
-                </div>
-                <ul>
-                  <li>Spearheading AI-first product strategy across conversational AI, automation, and quality intelligence initiatives.</li>
-                  <li>Built and scaled AI Calling Agents using LangChain + RAG, automating farmer engagement and feedback capture—reducing manual effort by 80% and increasing daily feedback coverage by 25%.</li>
-                  <li>Shipped MVPs for AI-assisted calling, improving successful conversation rate from 60% to 80%+ through prompt optimization, A/B testing, and call tagging—doubling actionable insights.</li>
-                  <li>Launched a Prompt Management System with versioning, model configs, and analytics—improving prompt iteration velocity by 4x.</li>
-                  <li>Enhanced transcript post-processing with GPT, boosting sentiment-label match rate to 90%+ and enabling action routing to relevant teams.</li>
-                  <li>Built a voice interaction system using Bland AI (with Indian number support) and OpenAI for structured JSON outputs, improving call reliability and connect rates.</li>
-                  <li>Developed an internal RAG system to centralize policies and SOPs, streamlining cross-departmental knowledge access and reducing reliance on manual context sharing.</li>
-                  <li>Created feedback loops and dashboards mapping implied vs explicit ratings, sentiment mismatches, and top vendor issues—accelerating vendor follow-ups by 40%.</li>
-                  <li>Delivered a Digital Quality Reports module, saving 1000+ manhours/month and enabling computer vision integration.</li>
-                  <li>Launched a unified Ops Portal for inventory tracking, material reconciliation, and predictive insights—boosting traceability across 30+ locations.</li>
-                  <li>Balanced dual roles as Product Manager and Technical Lead, driving architecture decisions, building PoCs, and aligning cross-functional teams.</li>
-                </ul>
-              </div>
-
-              <h3>Engineering Background</h3>
-
-              <div className="job">
-                <div className="job-header">
-                  <h4>Software Development Engineer II | Vegrow</h4>
-                  <p className="job-period">Apr 2023 – Jun 2024 | Bengaluru, India</p>
-                </div>
-                <ul>
-                  <li>Led a team of 8 engineers while balancing feature delivery and architectural ownership.</li>
-                  <li>Designed and implemented a QR microservice in Go using the Ports & Adapters pattern to manage inventory traceability, integrated with MongoDB and Kafka.</li>
-                  <li>Built reusable, testable libraries for audit logging and common services to drive engineering consistency across teams.</li>
-                  <li>Implemented Slack-integrated CI/CD workflows using GitHub Actions and Jenkins, improving pipeline visibility and reducing release cycles.</li>
-                  <li>Championed developer productivity by improving unit test coverage and CI automation with mocks and dependency injection.</li>
-                  <li>Played a pivotal role in company-wide tech initiatives including organizing hackathons, mentoring new hires, and improving developer onboarding documentation.</li>
-                </ul>
-              </div>
-
-              <div className="job">
-                <div className="job-header">
-                  <h4>Software Development Engineer I | Vegrow</h4>
-                  <p className="job-period">Oct 2022 – Mar 2023 | Bengaluru, India</p>
-                </div>
-                <ul>
-                  <li>Developed a scalable inventory management system using Ruby on Rails and MySQL, optimized for warehouse-level ops.</li>
-                  <li>Created a stateless, scalable OTP microservice using Golang and integrated it with Kaleyra SMS for customer communication.</li>
-                  <li>Led DevOps transformation from AWS ECS to EKS, improving deployment efficiency and system reliability.</li>
-                  <li>Participated in infrastructure enhancements such as Docker containerization and observability via Sentry and AWS CloudWatch.</li>
-                </ul>
-              </div>
-
-              <div className="job">
-                <div className="job-header">
-                  <h4>Software Engineer | LivSYT</h4>
-                  <p className="job-period">May 2021 – Oct 2022 | Hyderabad, India</p>
-                </div>
-                <ul>
-                  <li>Worked on a construction SaaS platform with microservices in Node.js (TypeScript) and PostgreSQL.</li>
-                  <li>Streamlined core workflow features using state machines and improved legacy systems via clean data migrations.</li>
-                  <li>Implemented cron-based push notifications using AWS Lambda + CloudWatch and managed email communication with SES.</li>
-                  <li>Designed after-DB triggers and an audit trail system for sensitive data operations.</li>
-                  <li>Built a robust role-based access control system based on org-level hierarchies.</li>
-                </ul>
-              </div>
-
-              <div className="job">
-                <div className="job-header">
-                  <h4>Computational Design Intern | Arth Design Build</h4>
-                  <p className="job-period">Jan 2020 – Jun 2020 | Hyderabad, India</p>
-                </div>
-                <ul>
-                  <li>Built generative design scripts using Dynamo and Python to automate architecture layouts in BIM tools.</li>
-                  <li>Applied evolutionary algorithms to solve spatial layout optimization problems (e.g., parking design).</li>
-                  <li>Presented R&D outputs to clients, bridging architectural design with computational logic.</li>
-                </ul>
-              </div>
-            </section>
-          )}
-
-          {activeSection === 'skills' && (
-            <section className="skills-section">
-              <div className="skill-category">
-                <h3>Product Management</h3>
-                <p>PRD Specs, Metrics Design, Wireframing, AI Prompt Design, Product Roadmapping & Lifecycle Management, Jira, Agile & Scrum Methodologies, Model Evaluation Metrics, Data Annotation & Feedback Loops</p>
-              </div>
-
-              <div className="skill-category">
-                <h3>GenAI & Model Integration</h3>
-                <p>Prompt Engineering, Model Orchestration (OpenAI, Claude, Gemini, Mistral), LangChain, Whisper STT, RAG, Semantic Search, Pinecone, Token & Context Management, Post-processing Pipelines, A/B Testing, Use-case Fine-tuning, Model Context Protocol (MCP)</p>
-              </div>
-
-              <div className="skill-category">
-                <h3>Engineering</h3>
-                <p>Golang, Node.js, Python, Ruby on Rails, REST APIs, Kafka, Docker, Kubernetes, Jenkins, GitHub Actions</p>
-              </div>
-
-              <div className="skill-category">
-                <h3>Databases</h3>
-                <p>MySQL, PostgreSQL, MongoDB, Pinecone, Weaviate, FAISS, Qdrant, Redis (Vector & Cache), Elasticsearch (Hybrid Search)</p>
-              </div>
-
-              <div className="skill-category">
-                <h3>Tools & Integrations</h3>
-                <p>Figma, Postman, Slack APIs, and third-party integrations with platforms like Zoho, Twilio, Kaleyra</p>
-              </div>
-            </section>
-          )}
-
-          {activeSection === 'education' && (
-            <section className="education-section">
-              <h3>Education</h3>
-              <div className="education-item">
-                <h4>IIT Kharagpur – Bachelors (Honors) in Architecture, 2021</h4>
-                <p>Relevant Courses: Data Structures, Algorithms, AI Fundamentals</p>
-                <p>Track: Entrepreneurship & Innovation</p>
-              </div>
-              <div className="education-item">
-                <h4>Intermediate – Narayana Junior College, 2016</h4>
-                <p>Score: 97%</p>
-              </div>
-              <div className="education-item">
-                <h4>SSC – Dr. KKR's Gowtham School, 2014</h4>
-                <p>Score: 9.7 CGPA</p>
-              </div>
-            </section>
-          )}
-
-          {activeSection === 'achievements' && (
-            <section className="achievements-section">
-              <h3>Achievements</h3>
-              <ul>
-                <li>Reduced manual QA hours by 1000+/month via Digital Quality Reports</li>
-                <li>Scaled AI calling from MVP to 80%+ success rate with prompt improvements and infra</li>
-                <li>Defined new metrics (like implied vs explicit sentiment match, tag accuracy scoring, success scoring across calls)</li>
-                <li>Successfully led internal teams to adopt GenAI tools for productivity (e.g., Whisper + GPT audio transcript enrichment)</li>
-                <li>Special Mention: All India Student Design Competition (HHAC), Hackathon Lead (Vegrow)</li>
-                <li>Invited to Google Foobar Challenge – identified through Google's developer algorithm based on coding activity; recognized for problem-solving capabilities.</li>
-              </ul>
-            </section>
-          )}
+          <div className="hero-links">
+            <a className="link-chip" href="https://www.linkedin.com/in/sai-charan-k/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+            <a className="link-chip" href="https://saicharankummetha.medium.com" target="_blank" rel="noopener noreferrer">Blog ↗</a>
+            <a className="link-chip" href="https://github.com/charan44k" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <a className="link-chip" href="mailto:saicharankummetha@gmail.com">Email ↗</a>
+          </div>
         </div>
       </header>
 
-      <footer className="App-footer">
-        <p>© 2024 Sai Charan Kummetha | Built with React | Last updated: April 20, 2024</p>
+      <main className="wrap">
+        <section className="module" id="summary">
+          <div className="module-head">
+            <span className="module-index">00</span>
+            <span className="module-title">Summary</span>
+            <span className="module-rule"></span>
+          </div>
+          <p className="summary-text">
+            Technical Product Manager with 5 years across Product Management, Software Engineering, and Applied AI.
+            Built and scaled 0→1 and growth-stage products spanning AI platforms, large-scale consumer applications,
+            marketplaces, supply chain, and financial workflows — combining strong product execution with deep
+            technical grounding in distributed systems, LLMs, voice agents, developer platforms, and data-driven
+            experimentation.
+          </p>
+        </section>
+
+        <section className="module" id="experience">
+          <div className="module-head">
+            <span className="module-index">01</span>
+            <span className="module-title">Experience Log</span>
+            <span className="module-rule"></span>
+          </div>
+
+          <div className="timeline">
+            <div className="entry active">
+              <span className="tag ai">AI · PRODUCT</span>
+              <div className="entry-top">
+                <span className="entry-role">Product Manager II</span>
+                <span className="entry-org">Paytm</span>
+                <span className="entry-dates">FEB 2026 — PRESENT</span>
+              </div>
+              <ul>
+                <li>Leading strategy and execution for AI-native experiences across Paytm's consumer and merchant applications.</li>
+                <li>Building voice-driven and agentic interactions that let users complete tasks through guided, conversational flows.</li>
+                <li>Operating across multiple apps and surfaces, turning emerging agentic AI capability into everyday, trustworthy product experience.</li>
+              </ul>
+            </div>
+
+            <div className="entry">
+              <span className="tag ai">AI · PRODUCT</span>
+              <div className="entry-top">
+                <span className="entry-role">Product Manager, AI &amp; Automation</span>
+                <span className="entry-org">Vegrow</span>
+                <span className="entry-dates">JUL 2024 — FEB 2026</span>
+              </div>
+              <ul>
+                <li>Built and scaled Vegrow's AI Voice Platform from prototype to 30,000+ conversations/month across NPS, profiling, slot booking, and ops workflows.</li>
+                <li>Improved task completion from 40% to 70% through conversation redesign, latency optimization, and interruption handling.</li>
+                <li>Raised NPS from 30 to 65 via structured feedback capture, sentiment analysis, and automated stakeholder reporting.</li>
+                <li>Built pluggable STT/TTS/LLM orchestration with evaluation and observability systems for rapid experimentation.</li>
+                <li>Delivered supply chain &amp; finance products supporting ₹70 Cr+ GMV, plus a Procure-to-Pay platform cutting approval turnaround by 40%.</li>
+              </ul>
+            </div>
+
+            <div className="entry">
+              <span className="tag eng">ENGINEERING</span>
+              <div className="entry-top">
+                <span className="entry-role">SDE-II / Tech Lead</span>
+                <span className="entry-org">Vegrow</span>
+                <span className="entry-dates">OCT 2022 — JUN 2024</span>
+              </div>
+              <ul>
+                <li>Progressed from SDE-I to leading an 8-member team during Vegrow's scale from ₹100 Cr to ₹500 Cr+ revenue.</li>
+                <li>Architected QR-based inventory traceability infrastructure in Golang, Kafka, and MongoDB.</li>
+                <li>Migrated core infrastructure from AWS ECS to EKS and built out CI/CD automation.</li>
+                <li>Contributed LiDAR + stereo-capture pipelines to the Velens computer vision initiative.</li>
+              </ul>
+            </div>
+
+            <div className="entry">
+              <span className="tag eng">ENGINEERING</span>
+              <div className="entry-top">
+                <span className="entry-role">Software Engineer</span>
+                <span className="entry-org">LivSYT</span>
+                <span className="entry-dates">MAY 2021 — OCT 2022</span>
+              </div>
+              <ul>
+                <li>Built backend systems for a B2B construction-tech SaaS platform scaling from 0 to $0.5M ARR.</li>
+                <li>Designed state-machine-based workflow orchestration and event-driven notification systems.</li>
+                <li>Built RBAC and auditing frameworks for enterprise workflows.</li>
+              </ul>
+            </div>
+
+            <div className="entry">
+              <span className="tag design">DESIGN</span>
+              <div className="entry-top">
+                <span className="entry-role">Computational Design Intern</span>
+                <span className="entry-org">Arth Design Build</span>
+                <span className="entry-dates">JAN 2020 — JUN 2020</span>
+              </div>
+              <ul>
+                <li>Built generative design workflows using NSGA-II optimization for parking layouts and tower orientation studies.</li>
+                <li>Automated BIM processes with Revit Dynamo, Python, and Revit APIs.</li>
+                <li>First real exposure to algorithmic problem-solving — the spark for the later shift into engineering.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section className="module" id="skills">
+          <div className="module-head">
+            <span className="module-index">02</span>
+            <span className="module-title">Skill Matrix</span>
+            <span className="module-rule"></span>
+          </div>
+
+          <div className="skill-lane product">
+            <div className="skill-lane-head">
+              <span className="signal"><span></span><span></span><span></span></span>
+              <span className="skill-lane-label">Product</span>
+            </div>
+            <div className="skill-tags">
+              {['Product Strategy','Product Discovery','Roadmapping','GTM','User Research','UX Design','Experimentation','A/B Testing','Product Analytics','Platform Products','Stakeholder Management'].map(s => <span key={s}>{s}</span>)}
+            </div>
+          </div>
+
+          <div className="skill-lane ai">
+            <div className="skill-lane-head">
+              <span className="signal"><span></span><span></span><span></span></span>
+              <span className="skill-lane-label">AI Systems</span>
+            </div>
+            <div className="skill-tags">
+              {['LLMs','Voice Agents','Browser Agents','Multi-Agent Systems','STT / TTS','AI Evaluation','Observability','RAG','MCP'].map(s => <span key={s}>{s}</span>)}
+            </div>
+          </div>
+
+          <div className="skill-lane eng">
+            <div className="skill-lane-head">
+              <span className="signal"><span></span><span></span><span></span></span>
+              <span className="skill-lane-label">Engineering</span>
+            </div>
+            <div className="skill-tags">
+              {['Golang','Python','TypeScript','Node.js','Distributed Systems','Kafka','Microservices','SQL / NoSQL','Kubernetes','Docker','AWS','WebRTC','WebSockets','MQTT'].map(s => <span key={s}>{s}</span>)}
+            </div>
+          </div>
+        </section>
+
+        <section className="module" id="achievements">
+          <div className="module-head">
+            <span className="module-index">03</span>
+            <span className="module-title">Achievements</span>
+            <span className="module-rule"></span>
+          </div>
+          <div className="ach-grid">
+            <div className="ach-card">
+              <div className="ach-year">2026</div>
+              <div className="ach-title">Rising Star — Paytm</div>
+              <div className="ach-desc">Recognized among early high-performing hires for driving AI-powered voice experiences across consumer and merchant applications.</div>
+            </div>
+            <div className="ach-card">
+              <div className="ach-year">2025</div>
+              <div className="ach-title">Excellence Award — Vegrow</div>
+              <div className="ach-desc">Recognized for building and scaling Vegrow's AI Voice Platform from prototype to production.</div>
+            </div>
+            <div className="ach-card">
+              <div className="ach-year">2024</div>
+              <div className="ach-title">Hackathon Leadership</div>
+              <div className="ach-desc">Organized and led a company-wide hackathon at Vegrow with 95%+ participation.</div>
+            </div>
+            <div className="ach-card">
+              <div className="ach-year">2023</div>
+              <div className="ach-title">Google Foobar Invitee</div>
+              <div className="ach-desc">Invited to Google's invitation-only algorithmic problem-solving challenge.</div>
+            </div>
+          </div>
+        </section>
+
+        <section className="module" id="transmissions">
+          <div className="module-head">
+            <span className="module-index">04</span>
+            <span className="module-title">Transmissions</span>
+            <span className="module-rule"></span>
+          </div>
+          <div className="post-list">
+            {[
+              { title: 'The Anatomy of an AI Agent', desc: 'Breaks down how AI agents actually think, decide, and act.', date: 'JUN 2026', url: 'https://saicharankummetha.medium.com/ai-agents-explained-simply-from-thinking-to-taking-action-b95de2216529' },
+              { title: 'Why MCP When We Already Have Tool Calling?', desc: 'What Model Context Protocol adds beyond simple function calls.', date: 'FEB 2026', url: 'https://saicharankummetha.medium.com/why-mcp-when-we-already-have-tool-calling-f563cfcf1e39' },
+              { title: 'LLMs Are Stateless. Context Is the Product.', desc: 'Why context engineering matters more than the model itself.', date: 'DEC 2025', url: 'https://saicharankummetha.medium.com/llms-are-stateless-context-is-the-product-336c50ae637c' },
+              { title: 'User Experience: The Real Differentiator in the Age of AI', desc: 'Why UX craft matters more, not less, as AI commoditizes capability.', date: 'DEC 2025', url: 'https://saicharankummetha.medium.com/user-experience-the-real-differentiator-in-the-age-of-ai-7bf0e9b5611d' },
+              { title: 'High-Stakes Decisions, Incomplete Information', desc: 'On making calls in ambiguity, without waiting for certainty.', date: 'JUN 2026', url: 'https://saicharankummetha.medium.com/high-stakes-decisions-incomplete-information-ee366074b8c1' },
+              { title: 'From Blueprints to Code', desc: 'His own pivot from architecture into software engineering.', date: 'JAN 2024', url: 'https://saicharankummetha.medium.com/from-blueprints-to-code-a-journey-from-architecture-to-software-development-53f35c42f915' },
+            ].map(post => (
+              <a className="post" key={post.url} href={post.url} target="_blank" rel="noopener noreferrer">
+                <div className="post-main">
+                  <div className="post-title">{post.title}</div>
+                  <div className="post-desc">{post.desc}</div>
+                </div>
+                <div className="post-date">{post.date}</div>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        <section className="module" id="education">
+          <div className="module-head">
+            <span className="module-index">05</span>
+            <span className="module-title">Education</span>
+            <span className="module-rule"></span>
+          </div>
+          <div className="edu-entry">
+            <div className="edu-school">Indian Institute of Technology, Kharagpur</div>
+            <div className="edu-detail">Bachelor's (Honours), Architecture · 2016 — 2021</div>
+            <div className="edu-note">Relevant coursework: Programming &amp; Data Structures, AI Foundations &amp; Applications, Mathematics, CAD &amp; Simulation, Engineering Design Process, Product Development.</div>
+          </div>
+          <div className="edu-entry">
+            <div className="edu-school">Narayana Institute</div>
+            <div className="edu-detail">Intermediate (MPC) · 2014 — 2016 · 97%</div>
+          </div>
+          <div className="edu-entry">
+            <div className="edu-school">Dr. KKR's Gowtham School</div>
+            <div className="edu-detail">SSC · 2014 · 9.7 CGPA</div>
+          </div>
+        </section>
+      </main>
+
+      <footer className="footer" id="contact">
+        <div className="wrap">
+          <div className="module-head" style={{ justifyContent: 'center' }}>
+            <span className="module-index">06</span>
+            <span className="module-title">Contact</span>
+            <span className="module-rule"></span>
+          </div>
+          <div className="footer-cta">Open a channel.</div>
+          <div className="footer-links">
+            <a className="link-chip" href="mailto:saicharankummetha@gmail.com">saicharankummetha@gmail.com ↗</a>
+            <a className="link-chip" href="https://www.linkedin.com/in/sai-charan-k/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+            <a className="link-chip" href="https://saicharankummetha.medium.com" target="_blank" rel="noopener noreferrer">Blog ↗</a>
+            <a className="link-chip" href="https://github.com/charan44k" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          </div>
+          <div className="footer-meta">© KUMMETHA SAI CHARAN · BENGALURU, IN · SYSTEM NOMINAL</div>
+        </div>
       </footer>
-    </div>
+    </>
   );
 }
 
