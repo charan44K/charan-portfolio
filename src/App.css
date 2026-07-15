@@ -39,13 +39,18 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .wrap { max-width: 1140px; margin: 0 auto; padding: 0 32px; }
 @media (max-width: 640px) { .wrap { padding: 0 20px; } }
 
+.node-field {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+}
+
 .grid-bg {
   position: fixed;
   inset: 0;
   z-index: -1;
-  background-image:
-    radial-gradient(ellipse 65% 55% at 50% -8%, rgba(49, 225, 122, 0.16), transparent 62%),
-    radial-gradient(ellipse 50% 40% at 90% 15%, rgba(125, 163, 255, 0.08), transparent 60%);
+  background-image: radial-gradient(ellipse 85% 65% at 50% 0%, transparent 45%, var(--bg) 100%);
+  pointer-events: none;
 }
 
 .nav {
@@ -101,7 +106,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 @media (max-width: 640px) { .nav-links { display: none; } }
 
 .hero {
-  padding: clamp(90px, 15vw, 170px) 0 84px;
+  padding: clamp(44px, 6vw, 76px) 0 76px;
   border-bottom: 1px solid var(--border-soft);
 }
 
@@ -118,19 +123,34 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   position: relative;
   flex: 0 0 auto;
   width: clamp(190px, 20vw, 260px);
-  padding: 10px;
+  padding: 14px 18px 22px 14px;
+}
+
+.hero-photo-ring {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(49, 225, 122, 0.4);
+  transform: rotate(6deg);
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero-photo-ring { animation: ring-pulse 5s ease-in-out infinite; }
+}
+@keyframes ring-pulse {
+  0%, 100% { opacity: 0.45; transform: rotate(6deg) scale(1); }
+  50% { opacity: 0.85; transform: rotate(6deg) scale(1.015); }
 }
 
 .hero-photo::before,
 .hero-photo::after {
   content: '';
   position: absolute;
-  width: 26px;
-  height: 26px;
+  width: 22px;
+  height: 22px;
   border: 2px solid var(--accent);
 }
-.hero-photo::before { top: 0; right: 0; border-left: none; border-bottom: none; }
-.hero-photo::after { bottom: 0; left: 0; border-right: none; border-top: none; }
+.hero-photo::before { top: 2px; right: 6px; border-left: none; border-bottom: none; }
+.hero-photo::after { bottom: 10px; left: 2px; border-right: none; border-top: none; }
 
 .hero-photo-frame {
   position: relative;
@@ -138,7 +158,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   overflow: hidden;
   background: var(--surface);
   border: 1px solid var(--border);
-  clip-path: polygon(22px 0, 100% 0, 100% calc(100% - 22px), calc(100% - 22px) 100%, 0 100%, 0 22px);
+  clip-path: polygon(28px 0, 100% 0, 100% 100%, 0 100%, 0 28px);
   box-shadow: 0 25px 70px -25px rgba(49, 225, 122, 0.4);
 }
 
@@ -171,13 +191,15 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .hero-photo-tag {
   position: absolute;
   z-index: 2;
-  left: 50%;
-  bottom: -14px;
-  transform: translateX(-50%);
+  left: 14px;
+  bottom: -4px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
   background: var(--bg);
   border: 1px solid var(--border);
   border-radius: 999px;
-  padding: 6px 14px;
+  padding: 6px 14px 6px 11px;
   font-family: var(--font-body);
   font-size: 10px;
   font-weight: 700;
@@ -186,11 +208,12 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   color: var(--accent);
   white-space: nowrap;
 }
+.hero-photo-tag .dot { box-shadow: 0 0 6px var(--accent); }
 
 @media (max-width: 780px) {
   .hero-grid { flex-direction: column-reverse; align-items: flex-start; gap: 48px; }
-  .hero-photo { width: 170px; margin-left: 4px; }
-  .hero-photo-tag { font-size: 9px; padding: 5px 11px; letter-spacing: 0.05em; }
+  .hero-photo { width: 175px; margin-left: 4px; }
+  .hero-photo-tag { font-size: 9px; padding: 5px 12px 5px 9px; letter-spacing: 0.05em; }
 }
 
 .hero-tag {

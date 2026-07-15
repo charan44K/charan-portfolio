@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import './App.css';
+import NodeField from './NodeField';
 
 function App() {
   useEffect(() => {
@@ -24,6 +25,7 @@ function App() {
 
   return (
     <>
+      <NodeField />
       <div className="grid-bg"></div>
 
       <nav className="nav">
@@ -76,11 +78,12 @@ function App() {
           </div>
 
           <div className="hero-photo">
+            <div className="hero-photo-ring"></div>
             <div className="hero-photo-frame">
               <img src={process.env.PUBLIC_URL + '/images/headshot.png'} alt="Kummetha Sai Charan" />
               <div className="scan-line"></div>
             </div>
-            <div className="hero-photo-tag">ID · SCK-01 // VERIFIED</div>
+            <div className="hero-photo-tag"><span className="dot"></span>SCK-01 // VERIFIED</div>
           </div>
         </div>
       </header>
