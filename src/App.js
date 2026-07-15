@@ -43,7 +43,7 @@ function App() {
 
       <header className="hero">
         <div className="wrap">
-          <div className="hero-tag">// PRODUCT MANAGER · APPLIED AI</div>
+          <div className="hero-tag">{'// PRODUCT MANAGER · APPLIED AI'}</div>
           <h1>Kummetha Sai Charan</h1>
           <div className="hero-role">Building <span>AI-native experiences</span> — voice agents, agentic UX, and the systems behind them.</div>
 
