@@ -249,6 +249,16 @@ function App() {
               <div className="ach-title">Google Foobar Invitee</div>
               <div className="ach-desc">Invited to Google's invitation-only algorithmic problem-solving challenge.</div>
             </div>
+            <div className="ach-card">
+              <div className="ach-year">2018</div>
+              <div className="ach-title">Special Mention — HOSMAC HHAC</div>
+              <div className="ach-desc">Special Mention in the 3rd edition of the All India Architectural Student Competition (HHAC) for designing a Children's Hospital and Research Centre, conducted by HOSMAC.</div>
+            </div>
+            <div className="ach-card">
+              <div className="ach-year">2017</div>
+              <div className="ach-title">Runner-Up — Vertical Design Problem</div>
+              <div className="ach-desc">Second position for team submission in a vertical design problem competition, conducted by Arth Design Build.</div>
+            </div>
           </div>
         </section>
 
