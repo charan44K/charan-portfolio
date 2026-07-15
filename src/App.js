@@ -42,35 +42,41 @@ function App() {
       </nav>
 
       <header className="hero">
-        <div className="wrap">
-          <div className="hero-tag">Product Manager II · AI Native Experiences</div>
-          <h1>Kummetha Sai Charan</h1>
-          <div className="hero-role">Building <span>voice agents and AI agents</span> that operate at scale — turning emerging AI capability into trustworthy, everyday product experience.</div>
+        <div className="wrap hero-grid">
+          <div className="hero-content">
+            <div className="hero-tag">Product Manager II · AI Native Experiences</div>
+            <h1>Kummetha Sai Charan</h1>
+            <div className="hero-role">Building <span>voice agents and AI agents</span> that operate at scale — turning emerging AI capability into trustworthy, everyday product experience.</div>
 
-          <div className="status-grid">
-            <div className="status-item">
-              <div className="status-label">ROLE</div>
-              <div className="status-value">PM II — PAYTM</div>
+            <div className="status-grid">
+              <div className="status-item">
+                <div className="status-label">ROLE</div>
+                <div className="status-value">PM II — PAYTM</div>
+              </div>
+              <div className="status-item">
+                <div className="status-label">FOCUS</div>
+                <div className="status-value">VOICE + AI AGENTS, AT SCALE</div>
+              </div>
+              <div className="status-item">
+                <div className="status-label">LOCATION</div>
+                <div className="status-value">BENGALURU, IN</div>
+              </div>
+              <div className="status-item">
+                <div className="status-label">STATUS</div>
+                <div className="status-value live">● ACTIVE</div>
+              </div>
             </div>
-            <div className="status-item">
-              <div className="status-label">FOCUS</div>
-              <div className="status-value">VOICE + AI AGENTS, AT SCALE</div>
-            </div>
-            <div className="status-item">
-              <div className="status-label">LOCATION</div>
-              <div className="status-value">BENGALURU, IN</div>
-            </div>
-            <div className="status-item">
-              <div className="status-label">STATUS</div>
-              <div className="status-value live">● ACTIVE</div>
+
+            <div className="hero-links">
+              <a className="link-chip primary" href="https://www.linkedin.com/in/sai-charan-k/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+              <a className="link-chip" href="https://saicharankummetha.medium.com" target="_blank" rel="noopener noreferrer">Blog ↗</a>
+              <a className="link-chip" href="https://github.com/charan44k" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+              <a className="link-chip" href="mailto:saicharankummetha@gmail.com">Email ↗</a>
             </div>
           </div>
 
-          <div className="hero-links">
-            <a className="link-chip primary" href="https://www.linkedin.com/in/sai-charan-k/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-            <a className="link-chip" href="https://saicharankummetha.medium.com" target="_blank" rel="noopener noreferrer">Blog ↗</a>
-            <a className="link-chip" href="https://github.com/charan44k" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-            <a className="link-chip" href="mailto:saicharankummetha@gmail.com">Email ↗</a>
+          <div className="hero-photo">
+            <img src={process.env.PUBLIC_URL + '/images/headshot.png'} alt="Kummetha Sai Charan" />
           </div>
         </div>
       </header>
@@ -83,7 +89,7 @@ function App() {
             <span className="module-rule"></span>
           </div>
           <p className="summary-text">
-            Technical Product Manager with 5 years across Product Management, Software Engineering, and Applied AI.
+            Product Manager with engineering experience — more than 5 years across Product Management, Software Engineering, and Applied AI.
             Built and scaled 0→1 and growth-stage products spanning AI platforms, large-scale consumer applications,
             marketplaces, supply chain, and financial workflows — combining strong product execution with deep
             technical grounding in distributed systems, LLMs, voice agents, developer platforms, and data-driven
@@ -162,7 +168,7 @@ function App() {
             </div>
 
             <div className="entry">
-              <span className="tag design">DESIGN</span>
+              <span className="tag research">RESEARCH</span>
               <div className="entry-top">
                 <span className="entry-role">Computational Design Intern</span>
                 <span className="entry-org">Arth Design Build</span>
@@ -278,10 +284,13 @@ function App() {
             <span className="module-title">Education</span>
             <span className="module-rule"></span>
           </div>
-          <div className="edu-entry">
-            <div className="edu-school">Indian Institute of Technology, Kharagpur</div>
-            <div className="edu-detail">Bachelor's (Honours), Architecture · 2016 — 2021</div>
-            <div className="edu-note">Relevant coursework: Programming &amp; Data Structures, AI Foundations &amp; Applications, Mathematics, CAD &amp; Simulation, Engineering Design Process, Product Development.</div>
+          <div className="edu-entry edu-entry-photo">
+            <div className="edu-entry-text">
+              <div className="edu-school">Indian Institute of Technology, Kharagpur</div>
+              <div className="edu-detail">Bachelor's (Honours), Architecture · 2016 — 2021</div>
+              <div className="edu-note">Pursued with a passion to study emerging technology that can shape future built environments. Gained strong exposure to Computational Design, Technology, Architecture, and AI.</div>
+            </div>
+            <img className="edu-photo" src={process.env.PUBLIC_URL + '/images/iit-convocation.png'} alt="Convocation at IIT Kharagpur" />
           </div>
           <div className="edu-entry">
             <div className="edu-school">Narayana Institute</div>
