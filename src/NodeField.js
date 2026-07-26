@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-const COLORS = ['49,225,122', '125,163,255', '232,183,107'];
+const COLORS = ['167,139,250', '125,163,255', '232,183,107'];
 
 function NodeField() {
   const canvasRef = useRef(null);

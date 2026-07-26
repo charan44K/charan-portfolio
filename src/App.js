@@ -46,9 +46,9 @@ function App() {
       <header className="hero">
         <div className="wrap hero-grid">
           <div className="hero-content">
-            <div className="hero-tag">Product Manager II · AI Native Experiences</div>
-            <h1>Kummetha Sai Charan</h1>
-            <div className="hero-role">Building <span>voice agents and AI agents</span> that operate at scale — turning emerging AI capability into trustworthy, everyday product experience.</div>
+            <div className="hero-tag">Builder · AI Native Product Experiences</div>
+            <h1>Sai Charan Kummetha</h1>
+            <div className="hero-role">I lead and build <span>the next generation of human-computer interaction</span> at scale — using what LLMs make possible to create AI products that actually work, solving real problems for users while driving net-positive outcomes for the business.</div>
 
             <div className="status-grid">
               <div className="status-item">
@@ -57,7 +57,7 @@ function App() {
               </div>
               <div className="status-item">
                 <div className="status-label">FOCUS</div>
-                <div className="status-value">VOICE + AI AGENTS, AT SCALE</div>
+                <div className="status-value">NEXT-GEN HCI, AT SCALE</div>
               </div>
               <div className="status-item">
                 <div className="status-label">LOCATION</div>
@@ -78,12 +78,9 @@ function App() {
           </div>
 
           <div className="hero-photo">
-            <div className="hero-photo-ring"></div>
             <div className="hero-photo-frame">
-              <img src={process.env.PUBLIC_URL + '/images/headshot.png'} alt="Kummetha Sai Charan" />
-              <div className="scan-line"></div>
+              <img src={process.env.PUBLIC_URL + '/images/headshot.png'} alt="Sai Charan Kummetha" />
             </div>
-            <div className="hero-photo-tag"><span className="dot"></span>SCK-01 // VERIFIED</div>
           </div>
         </div>
       </header>
@@ -96,11 +93,13 @@ function App() {
             <span className="module-rule"></span>
           </div>
           <p className="summary-text">
-            Product Manager with engineering experience — more than 5 years across Product Management, Software Engineering, and Applied AI.
-            Built and scaled 0→1 and growth-stage products spanning AI platforms, large-scale consumer applications,
-            marketplaces, supply chain, and financial workflows — combining strong product execution with deep
-            technical grounding in distributed systems, LLMs, voice agents, developer platforms, and data-driven
-            experimentation.
+            A builder first — more than 5 years across Product Management, Software Engineering, and Applied AI,
+            leading and shipping 0→1 and growth-stage products that solve real problems, not just manage roadmaps.
+            Built and scaled products spanning AI platforms, large-scale consumer applications, marketplaces, supply
+            chain, and financial workflows — combining strong product execution with deep technical grounding in
+            distributed systems, LLMs, conversational and agentic interfaces, developer platforms, and data-driven experimentation to drive
+            outcomes that are net-positive for users and the business alike. Long-term, I'm working toward building
+            a technology company of my own — at the convergence of AI, consumer tech, and AEC.
           </p>
         </section>
 
@@ -133,12 +132,11 @@ function App() {
                 <span className="entry-org">Vegrow</span>
                 <span className="entry-dates">JUL 2024 — FEB 2026</span>
               </div>
-              <p className="entry-story">Working at a hypergrowth startup meant learning and executing at an exceptional pace — gaining first-hand exposure to strategy, GTM, and data-driven decision-making. More than anything, I learned to navigate ambiguity: using data, customer insight, and cross-functional collaboration to build products that solved real business problems.</p>
+              <p className="entry-story">Working at a hypergrowth startup meant learning and executing at an exceptional pace — building and scaling products across AI, marketplaces, supply chain intelligence, and financial workflows, with first-hand exposure to strategy, GTM, finance, and data-driven decision-making. More than anything, I learned to navigate ambiguity: operating at the intersection of product and engineering, using data, customer insight, and cross-functional collaboration to build products that solved real business problems.</p>
               <ul>
-                <li>Built and scaled Vegrow's AI Voice Platform from prototype to 30,000+ conversations/month across NPS, profiling, slot booking, and ops workflows.</li>
-                <li>Improved task completion from 40% to 70% through conversation redesign, latency optimization, and interruption handling.</li>
-                <li>Raised NPS from 30 to 65 via structured feedback capture, sentiment analysis, and automated stakeholder reporting.</li>
-                <li>Built pluggable STT/TTS/LLM orchestration with evaluation and observability systems for rapid experimentation.</li>
+                <li>Led 0→1 development of Vegrow's AI Voice Platform, scaling it from prototype to 30,000+ conversations/month across NPS, profiling, slot booking, and ops workflows.</li>
+                <li>Improved task completion from 40% to 70% through conversation redesign, latency optimization, and interruption handling; raised NPS from 30 to 65 via structured feedback capture and sentiment analysis.</li>
+                <li>Built pluggable STT/TTS/LLM orchestration and AI platforms that accelerated experimentation and cut manual effort, positioning AI as a core layer across product and operations.</li>
                 <li>Delivered supply chain &amp; finance products supporting ₹70 Cr+ GMV, plus a Procure-to-Pay platform cutting approval turnaround by 40%.</li>
               </ul>
             </div>
@@ -150,11 +148,11 @@ function App() {
                 <span className="entry-org">Vegrow</span>
                 <span className="entry-dates">OCT 2022 — JUN 2024</span>
               </div>
-              <p className="entry-story">Progressing from SDE-I to leading an 8-member team in under two years, during Vegrow's 5× revenue growth, taught me as much about team dynamics and execution as it did about distributed systems. It was my first time leading engineers — and the same period I was invited to Google's Foobar Challenge.</p>
+              <p className="entry-story">Progressing from SDE-I to leading an 8-member team in under two years, during Vegrow's 5× revenue growth, taught me as much about team dynamics and execution as it did about distributed systems — Golang, Kafka, event-driven architecture, and scaling infrastructure for hypergrowth. It was my first time leading engineers — and the same period I was invited to Google's Foobar Challenge.</p>
               <ul>
                 <li>Progressed from SDE-I to leading an 8-member team during Vegrow's scale from ₹100 Cr to ₹500 Cr+ revenue.</li>
-                <li>Architected QR-based inventory traceability infrastructure in Golang, Kafka, and MongoDB.</li>
-                <li>Migrated core infrastructure from AWS ECS to EKS and built out CI/CD automation.</li>
+                <li>Led development of QR-based inventory traceability platforms in Golang, Kafka, and MongoDB, digitizing supply-chain operations for end-to-end tracking of perishable goods.</li>
+                <li>Built scalable authentication services and internal frameworks, improving platform reliability and observability; migrated core infrastructure from AWS ECS to EKS with CI/CD automation.</li>
                 <li>Contributed LiDAR + stereo-capture pipelines to the Velens computer vision initiative.</li>
               </ul>
             </div>
@@ -166,11 +164,11 @@ function App() {
                 <span className="entry-org">LivSYT</span>
                 <span className="entry-dates">MAY 2021 — OCT 2022</span>
               </div>
-              <p className="entry-story">This role laid the foundation for my engineering career. I spent all my time learning backend systems and scalable architecture simply because I loved it — and watching code I wrote in India power products used by customers across the world remains one of the most rewarding parts of the journey.</p>
+              <p className="entry-story">This role laid the foundation for my engineering career. I spent all my time learning backend systems, databases, and scalable architecture simply because I loved it — excited to see technology solving real problems in the construction industry. Watching code I wrote in India power products used by customers across the world remains one of the most rewarding parts of the journey.</p>
               <ul>
-                <li>Built backend systems for a B2B construction-tech SaaS platform scaling from 0 to $0.5M ARR.</li>
-                <li>Designed state-machine-based workflow orchestration and event-driven notification systems.</li>
-                <li>Built RBAC and auditing frameworks for enterprise workflows.</li>
+                <li>Built and scaled backend systems for a B2B AEC AI SaaS platform serving Western and Southeast Asian markets using Node.js, PostgreSQL, and AWS, growing from 0 to $0.5M ARR.</li>
+                <li>Delivered end-to-end features from design to deployment and optimized core workflows using state-machine orchestration to improve performance and scalability.</li>
+                <li>Designed event-driven notification systems (AWS, FCM, SES) and built RBAC and auditing frameworks for enterprise workflows.</li>
               </ul>
             </div>
 
@@ -181,7 +179,7 @@ function App() {
                 <span className="entry-org">Arth Design Build</span>
                 <span className="entry-dates">JAN 2020 — JUN 2020</span>
               </div>
-              <p className="entry-story">Working on BIM automation and generative design with genetic algorithms — before the rise of LLMs — was my first real exposure to AI-driven problem-solving. It's what led me to consciously pivot into software engineering, convinced that understanding how real systems are built is foundational to creating technology that matters.</p>
+              <p className="entry-story">Working on BIM automation and generative design with genetic algorithms — before the rise of LLMs — was my first real exposure to AI-driven problem-solving, and to what's possible at the convergence of AI and traditional industries like AEC. Coming from a top technical institute, I felt positioned to solve those problems — which is what led me to consciously pivot into software engineering: to understand real-world systems, and what it actually takes to build a technology company.</p>
               <ul>
                 <li>Built generative design workflows using NSGA-II optimization for parking layouts and tower orientation studies.</li>
                 <li>Automated BIM processes with Revit Dynamo, Python, and Revit APIs.</li>
@@ -304,8 +302,8 @@ function App() {
           <div className="edu-entry edu-entry-photo">
             <div className="edu-entry-text">
               <div className="edu-school">Indian Institute of Technology, Kharagpur</div>
-              <div className="edu-detail">Bachelor's (Honours), Architecture · 2016 — 2021</div>
-              <div className="edu-note">Pursued with a passion to study emerging technology that can shape future built environments. Gained strong exposure to Computational Design, Technology, Architecture, and AI.</div>
+              <div className="edu-detail">Bachelor's (Honours), Architecture · 2016 — 2021 · 7.6 CGPA</div>
+              <div className="edu-note">Chose architecture drawn by a fascination with geometry, mechanics, and spatial design, and pursued it with a passion to study emerging technology that can shape future built environments. Gained strong exposure to Computational Design, Technology, Architecture, and AI.</div>
             </div>
             <img className="edu-photo" src={process.env.PUBLIC_URL + '/images/iit-convocation.png'} alt="Convocation at IIT Kharagpur" />
           </div>
@@ -334,7 +332,7 @@ function App() {
             <a className="link-chip" href="https://saicharankummetha.medium.com" target="_blank" rel="noopener noreferrer">Blog ↗</a>
             <a className="link-chip" href="https://github.com/charan44k" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
           </div>
-          <div className="footer-meta">© KUMMETHA SAI CHARAN · BENGALURU, IN · SYSTEM NOMINAL</div>
+          <div className="footer-meta">© SAI CHARAN KUMMETHA · BENGALURU, IN · SYSTEM NOMINAL</div>
         </div>
       </footer>
     </>
