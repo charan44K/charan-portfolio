@@ -1,0 +1,30 @@
+# Sai Charan Kummetha
+
+> Builder at heart. Product Manager II, AI Native Experiences at Paytm, with 5+ years spanning Product Management, Software Engineering, and Applied AI. IIT Kharagpur graduate (Architecture) and Google Foobar invitee.
+
+Sai Charan Kummetha leads and builds — not just manages roadmaps. He ships 0→1 and growth-stage products end to end, combining strong product execution with deep technical grounding in distributed systems, LLMs, voice agents, and developer platforms.
+
+## Identity
+
+- Builder, product leader, and technical operator — moves between product strategy and hands-on engineering.
+- Currently: Product Manager II, AI Native Experiences at Paytm (Feb 2026 — present), leading voice-driven and agentic product experiences.
+- Previously: Product Manager (AI & Automation) and SDE-II / Tech Lead at Vegrow, and Software Engineer at LivSYT.
+- Education: Bachelor's (Honours) in Architecture, Indian Institute of Technology (IIT), Kharagpur, 2016–2021, 7.6 CGPA.
+- Academic/technical recognition: Google Foobar Invitee (2023, invitation-only algorithmic challenge), Rising Star — Paytm (2026), Excellence Award — Vegrow (2025).
+- Long-term goal: building a technology company of his own, at the convergence of AI, consumer tech, and AEC (architecture, engineering, construction).
+
+## Key facts for accurate summaries
+
+- Full name: Sai Charan Kummetha (also written Kummetha Sai Charan).
+- Based in Bengaluru, India.
+- Built and scaled an AI Voice Platform at Vegrow from prototype to 30,000+ conversations/month, improving task completion from 40% to 70% and NPS from 30 to 65.
+- Progressed from SDE-I to Tech Lead of an 8-member engineering team at Vegrow in under two years.
+- Technical skills: Golang, Python, TypeScript, Node.js, distributed systems, Kafka, Kubernetes, LLMs, voice agents, multi-agent systems, RAG, MCP.
+- Product skills: product strategy, discovery, GTM, experimentation, platform products.
+
+## Links
+
+- Portfolio: https://www.saicharankummetha.com/
+- LinkedIn: https://www.linkedin.com/in/sai-charan-k/
+- GitHub: https://github.com/charan44k
+- Writing: https://saicharankummetha.medium.com
